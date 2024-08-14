@@ -7,6 +7,7 @@ import useFetch from '../hooks/useFetch';
 import RelatedProducts from '../components/RelatedProducts';
 // context
 import { CartContext } from '../context/CartContext';
+import { Oval } from 'react-loader-spinner';
 
 const ProductDetails = () => {
   const { addToCart } = useContext(CartContext);
@@ -14,7 +15,18 @@ const ProductDetails = () => {
   // get product data base on the id
   const { data } = useFetch(`/products?populate=*&filters[id][$eq]=${id}`);
   if (!data) {
-    return <div className='container mx-auto'>loading...</div>;
+   // return <div className='container mx-auto'>loading...</div>;
+   return <div className='container mx-auto flex space-x-3'>
+    <h2 className="text-[30px]">loading...</h2>
+    <Oval
+    visible={true}
+    height="40"
+    width="40"
+    color="#ffffff"
+    ariaLabel="oval-loading"
+    wrapperStyle={{}}
+    wrapperClass=""
+    /></div>
   }
   // category title
   const categoryTitle = data[0].attributes.categories.data[0].attributes.title;
@@ -31,24 +43,35 @@ const ProductDetails = () => {
               className='w-full max-w-[65%]'
             />
           </div>
-          <div className='flex-1 bg-primary p-12 xl:p-20 rounded-lg flex flex-col justify-center'>
+          <div className='flex-1 bg-white p-12 xl:p-20 rounded-lg flex flex-col justify-center'>
             {/* category title */}
-            <div className='uppercase text-accent text-lg font-medium mb-2'>
+            <div className='uppercase text-red-500 text-lg font-medium mb-2 '>
               {data[0].attributes.categories.data[0].attributes.title} cameras
             </div>
             {/* title */}
-            <h2 className='h2 mb-4'>{data[0].attributes.title}</h2>
+            <h2 className='h2 mb-4 text-primary'>{data[0].attributes.title}</h2>
             {/* description */}
-            <p className='mb-12'>{data[0].attributes.description}</p>
+            <p className='mb-12 text-primary'>{data[0].attributes.description}</p>
             {/* price & btn */}
             <div className='flex items-center gap-x-8'>
               {/* price */}
-              <div className='text-3xl text-accent font-semibold'>
-                ${data[0].attributes.price}
-              </div>
+              {!data[0].attributes.discounted_price ? (
+                <div className='text-xl font-bold text-red-500'>
+                  {data[0].attributes.price}€
+                </div>
+                ):(
+                  <div >
+                    <div className='text-lg font-bold text-red-500 line-through'>
+                      {data[0].attributes.price}€
+                    </div>
+                    <div className='text-xl font-bold text-red-500'>
+                      {data[0].attributes.discounted_price}€
+                    </div>
+                  </div>
+                )}
               <button
                 onClick={() => addToCart(data, id)}
-                className='btn btn-accent'
+                className='btn btn-accent text-white'
               >
                 Add to cart
               </button>

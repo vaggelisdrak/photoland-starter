@@ -22,7 +22,7 @@ const CartProvider = ({ children }) => {
   // cart total
   useEffect(() => {
     const total = cart.reduce((a, c) => {
-      return a + c.attributes.price * c.amount;
+      return c.attributes.discounted_price ? a + c.attributes.discounted_price * c.amount : a + c.attributes.price * c.amount;
     }, 0);
     setTotal(total);
   }, [cart]);

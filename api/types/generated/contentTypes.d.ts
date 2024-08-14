@@ -419,6 +419,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::category.category'
     >;
+    discounted_price: Attribute.Decimal;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

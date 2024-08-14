@@ -68,13 +68,13 @@ const Cart = () => {
           <div className='flex justify-between gap-x-4'>
             <button
               onClick={clearCart}
-              className='btn btn-accent hover:bg-accent-hover text-primary'
+              className='btn btn-accent hover:bg-red-900 text-white bg-red-500'
             >
               clear cart
             </button>
             <button
               onClick={handlePayment}
-              className='btn btn-accent hover:bg-accent-hover text-primary flex-1 px-2 gap-x-2'
+              className='btn btn-accent hover:bg-red-900 flex-1 px-2 gap-x-2 text-white bg-red-500'
             >
               Checkout
               <IoArrowForward className='text-lg' />

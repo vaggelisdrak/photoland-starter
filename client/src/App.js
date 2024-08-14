@@ -12,6 +12,7 @@ const Layout = () => {
   return (
     <div>
       <Header />
+      <div className='hidden sm:block h-[130px]'></div>
       <Outlet />
       <Footer />
     </div>

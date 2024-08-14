@@ -25,10 +25,10 @@ const Hero = () => {
             <div className='grad flex-1 h-[250px] rounded-[8px] overflow-hidden relative p-6'>
               {/* text */}
               <div className='flex flex-col max-w-[144px] h-full justify-center'>
-                <div className='text-[20px] uppercase font-medium leading-tight mb-4'>
+                <div className='text-[20px] uppercase font-medium leading-tight mb-4 text-primary'>
                   Save 35% all dslr cameras
                 </div>
-                <a href='#' className='uppercase text-accent'>
+                <a href='#' className='uppercase text-red-500'>
                   Shop now
                 </a>
               </div>
@@ -43,10 +43,10 @@ const Hero = () => {
             <div className='grad flex-1 h-[250px] rounded-[8px] overflow-hidden relative p-6'>
               {/* text */}
               <div className='flex flex-col max-w-[144px] h-full justify-center'>
-                <div className='text-[20px] uppercase font-medium leading-tight mb-4'>
+                <div className='text-[20px] uppercase font-medium leading-tight mb-4 text-primary'>
                   Save 25% mirrorless cameras
                 </div>
-                <a href='#' className='uppercase text-accent'>
+                <a href='#' className='uppercase text-red-500'>
                   Shop now
                 </a>
               </div>
