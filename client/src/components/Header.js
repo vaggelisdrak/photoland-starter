@@ -64,7 +64,7 @@ const Header = () => {
             <div
               className={`
               ${isOpen ? 'right-0' : '-right-full'}
-              bg-blue-800 shadow-xl fixed top-0 bottom-0 w-full z-10 md:max-w-[500px] transition-all duration-300`}
+              bg-blue-900 shadow-xl fixed top-0 bottom-0 w-full z-10 md:max-w-[500px] transition-all duration-300`}
             >
               <Cart />
             </div>
