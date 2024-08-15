@@ -13,6 +13,7 @@ const Layout = () => {
     <div>
       <Header />
       <div className='hidden sm:block h-[130px]'></div>
+      <br/>
       <Outlet />
       <Footer />
     </div>

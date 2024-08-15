@@ -39,7 +39,7 @@ const CartItem = ({ item }) => {
           </div>**/}
           {!item.attributes.discounted_price ? (
                 <div className='text-xl font-bold text-red-500'>
-                  {item.attributes.price * item.amount}
+                  {item.attributes.price * item.amount}€
                 </div>
                 ):(
                   <div className='text-xl font-bold text-red-500'>

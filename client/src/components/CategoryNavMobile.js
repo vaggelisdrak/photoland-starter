@@ -11,7 +11,7 @@ const CategoryNavMobile = ({ setCatnavMobile }) => {
   const { data } = useFetch('/categories');
 
   return (
-    <div className='w-full h-full bg-primary p-8'>
+    <div className='w-full h-full bg-blue-900 p-8'>
       {/* close icon */}
       <div
         onClick={() => setCatnavMobile(false)}
