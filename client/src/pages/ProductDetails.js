@@ -16,13 +16,13 @@ const ProductDetails = () => {
   const { data } = useFetch(`/products?populate=*&filters[id][$eq]=${id}`);
   if (!data) {
    // return <div className='container mx-auto'>loading...</div>;
-   return <div className='container mx-auto flex space-x-3'>
+   return <div className='container mx-auto flex space-x-3 text-primary'>
     <h2 className="text-[30px]">loading...</h2>
     <Oval
     visible={true}
     height="40"
     width="40"
-    color="#ffffff"
+    color="#000000"
     ariaLabel="oval-loading"
     wrapperStyle={{}}
     wrapperClass=""

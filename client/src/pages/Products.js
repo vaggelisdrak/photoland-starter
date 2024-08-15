@@ -50,7 +50,7 @@ const Products = () => {
           <CategoryNav />
           <main>
             {/* title */}
-            <div className='py-3 text-xl uppercase text-center lg:text-left'>
+            <div className='py-3 text-xl uppercase text-center lg:text-left text-primary'>
               {title} cameras
             </div>
             <br />
@@ -58,7 +58,7 @@ const Products = () => {
             <div className='flex flex-col md:flex-row justify-between mb-6'>
               {/* Price Range Filter */}
               <div>
-                <label>
+                <label className='text-primary'>
                   Min Price:
                   <input
                     type='number'
@@ -68,7 +68,7 @@ const Products = () => {
                     className='border rounded px-1 py-1 text-primary ml-2 w-[70px]'
                   />
                 </label>
-                <label className='ml-4'>
+                <label className='ml-4 text-primary'>
                   Max Price:
                   <input
                     type='number'
@@ -82,7 +82,7 @@ const Products = () => {
 
               {/* Sorting Options */}
               <div>
-                <label>
+                <label className='text-primary'>
                   Sort By:
                   <select value={sortOption} onChange={handleSortChange} className='border rounded ml-2 px-1 py-1 text-primary mt-5 sm:mt-0'>
                     <option value=''>None</option>

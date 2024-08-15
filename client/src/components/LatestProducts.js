@@ -8,9 +8,9 @@ const LatestProducts = () => {
   // get new products
   const { data } = useFetch('/products?populate=*&filters[isNew]=true');
   return (
-    <div className='mb-16'>
+    <div className='mb-16 mt-5'>
       <div className='container mx-auto'>
-        <h2 className='h2 mb-7 text-center xl:text-left'>Latest Products</h2>
+        <h2 className='h2 mb-7 text-center xl:text-left text-primary'><span className='p-2 bg-red-500 rounded-lg text-white'>Latest</span> Products</h2>
       </div>
       <ProductSlider data={data} />
     </div>

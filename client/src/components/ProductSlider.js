@@ -19,15 +19,15 @@ const ProductSlider = ({ data }) => {
       navigation={true}
       breakpoints={{
         320: {
-          slidesPerView: 1,
+          slidesPerView: 2,
           spaceBetween: 30,
         },
         768: {
-          slidesPerView: 2,
+          slidesPerView: 3,
           spaceBetween: 30,
         },
         1024: {
-          slidesPerView: 2,
+          slidesPerView: 4,
           spaceBetween: 30,
         },
         1440: {
@@ -38,7 +38,7 @@ const ProductSlider = ({ data }) => {
       pagination={{
         clickable: true,
       }}
-      className='productSlider mx-auto max-w-[360px] md:max-w-lg xl:max-w-[1410px]'
+      className='productSlider mx-auto max-w-[360px] md:max-w-lg lg:max-w-[1410px]'
     >
       <>
         {data?.map((product) => {

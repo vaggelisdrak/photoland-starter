@@ -10,7 +10,7 @@ const OnSaleProducts = () => {
   return (
     <div className='mb-16'>
       <div className='container mx-auto'>
-        <h2 className='h2 mb-7 text-center xl:text-left'>Products on <span className='p-2 bg-red-500 rounded-lg'>Sale</span></h2>
+        <h2 className='h2 mb-7 text-center xl:text-left text-primary'>Products on <span className='p-2 bg-red-500 rounded-lg text-white'>Sale</span></h2>
       </div>
       <ProductSlider data={data} />
     </div>

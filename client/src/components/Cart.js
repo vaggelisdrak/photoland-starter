@@ -32,7 +32,7 @@ const Cart = () => {
   };
 
   return (
-    <div className='w-full h-full px-4 text-white'>
+    <div className='w-full h-full px-4 text-primary'>
       <div className='overflow-y-auto overflow-x-hidden h-[75vh]'>
         {/* close icon */}
         <div
@@ -68,7 +68,7 @@ const Cart = () => {
           <div className='flex justify-between gap-x-4'>
             <button
               onClick={clearCart}
-              className='btn btn-accent hover:bg-red-900 text-white bg-red-500'
+              className='btn btn-accent hover:bg-red-900 text-white bg-blue-800'
             >
               clear cart
             </button>
@@ -82,9 +82,9 @@ const Cart = () => {
           </div>
         ) : (
           <div className='h-full absolute top-0 right-0 left-0 flex justify-center items-center -z-10 flex-col text-white/30'>
-            <div className='text-2xl'>Your cart is empty</div>
+            <div className='text-2xl text-primary'>Your cart is empty</div>
             <div className='text-6xl'>
-              <IoCartOutline />
+              <IoCartOutline className='text-primary'/>
             </div>
           </div>
         )}

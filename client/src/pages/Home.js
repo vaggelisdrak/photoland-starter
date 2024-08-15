@@ -10,6 +10,7 @@ const Home = () => {
   return (
     <section>
       <Hero />
+      <br/>
       <LatestProducts />
       <OnSaleProducts />
     </section>
