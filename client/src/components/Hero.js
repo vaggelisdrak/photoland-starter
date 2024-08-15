@@ -9,14 +9,14 @@ import PromoImg2 from '../img/promo_img2.png';
 const Hero = () => {
   return (
     <section className='mb-[30px] pt-36 lg:pt-0'>
-      <div className='container mx-auto'>
-        <div className='flex flex-col gap-y-[30px] xl:flex-row xl:gap-x-[30px]'>
+      <div className='xl:container mx-auto px-5 lg:pt-5 xl:pt-0'>
+        <div className='flex flex-col gap-y-[30px] lg:flex-row lg:gap-x-[10px] xl:gap-x-[30px]'>
           {/* sidebar */}
           <div>
             <CategoryNav />
           </div>
           {/* main slider */}
-          <div className='w-full max-w-lg lg:max-w-[734px] mx-auto'>
+          <div className='w-full max-w-lg lg:max-w-[634px] mx-auto'>
             <MainSlider />
           </div>
           {/* promos */}

@@ -23,7 +23,7 @@ const Header = () => {
           {/* menu */}
           <div
             onClick={() => setCatnavMobile(true)}
-            className='text-3xl xl:hidden cursor-pointer mt-3'
+            className='text-3xl lg:hidden cursor-pointer mt-3'
           >
             <FiMenu className='text-black' />
           </div>
@@ -46,7 +46,7 @@ const Header = () => {
           {/* phone & cart */}
           <div className='flex items-center gap-x-[10px]'>
             {/* phone */}
-            <div className='hidden xl:flex uppercase text-primary'>
+            <div className='hidden lg:flex uppercase text-primary'>
               Call us 2621023881
             </div>
             {/* cart icon */}
