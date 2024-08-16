@@ -13,10 +13,13 @@ const Search = () => {
   const searchTerm = searchParams.get('query');
   console.log(searchTerm);
   // get products based on search term
-  const { data } = useFetch(
+  /*const { data } = useFetch(
     `/products?populate=*&filters[title][$contains]=${searchTerm}`
-  );
+  );*/
+
+  const { data } = useFetch(`/products?populate=*&filters[$or][0][title][$contains]=${searchTerm}&filters[$or][1][description][$contains]=${searchTerm}`);
   console.log(data);
+  
   return (
     <div className='mb-[30px] pt-40 lg:pt-4 xl:pt-0'>
       <div className='container mx-auto'>
@@ -25,7 +28,7 @@ const Search = () => {
           <CategoryNav />
           <div>
             {/* title */}
-            <div className='py-3 text-xl uppercase text-center lg:text-left'>
+            <div className='py-3 text-xl uppercase text-center lg:text-left text-primary'>
               {data?.length > 0
                 ? `${data.length} results for ${searchTerm}`
                 : `no results found for ${searchTerm}`}
