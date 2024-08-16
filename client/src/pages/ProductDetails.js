@@ -52,9 +52,11 @@ const ProductDetails = () => {
             {/* title */}
             <h2 className='h2 mb-4 text-primary'>{data[0].attributes.title}</h2>
              {/* subcategory title */}
-            <div className='uppercase text-blue-800 text-md font-medium mb-2 '>
-              {data[0].attributes.subcategories.data[0].attributes.title} 
-            </div>
+            {data[0]?.attributes?.subcategories?.data[0]?.attributes?.title && (
+              <div className='uppercase text-blue-800 text-md font-medium mb-2 '>
+                {data[0].attributes?.subcategories?.data[0].attributes.title} 
+              </div>
+            )}
             {/* description */}
             <p className='mb-12 text-primary'>{data[0].attributes.description}</p>
             {/* price & btn */}
