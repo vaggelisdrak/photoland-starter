@@ -7,6 +7,7 @@ import useFetch from '../hooks/useFetch';
 import CategoryNav from '../components/CategoryNav';
 import Product from '../components/Product';
 import NoProducts from '../img/Untitled design (57).png';
+import { Oval } from 'react-loader-spinner';
 
 const Products = () => {
   const { id } = useParams();
@@ -68,6 +69,21 @@ const Products = () => {
   const handleSubcategoryChange = (event) => {
     setSelectedSubcategory(event.target.value);
   };
+
+  if (!data) {
+   // return <div className='container mx-auto'>loading...</div>;
+   return <div className='container mx-auto flex space-x-3 text-primary'>
+    <h2 className="text-[30px]">loading...</h2>
+    <Oval
+    visible={true}
+    height="40"
+    width="40"
+    color="#000000"
+    ariaLabel="oval-loading"
+    wrapperStyle={{}}
+    wrapperClass=""
+    /></div>
+  }
 
   return (
     <div className='mb-16 pt-40 lg:pt-0'>
