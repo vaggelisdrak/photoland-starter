@@ -14,6 +14,7 @@ const ProductDetails = () => {
   const { id } = useParams();
   // get product data base on the id
   const { data } = useFetch(`/products?populate=*&filters[id][$eq]=${id}`);
+  
   if (!data) {
    // return <div className='container mx-auto'>loading...</div>;
    return <div className='container mx-auto flex space-x-3 text-primary'>
@@ -50,6 +51,10 @@ const ProductDetails = () => {
             </div>
             {/* title */}
             <h2 className='h2 mb-4 text-primary'>{data[0].attributes.title}</h2>
+             {/* subcategory title */}
+            <div className='uppercase text-blue-800 text-md font-medium mb-2 '>
+              {data[0].attributes.subcategories.data[0].attributes.title} 
+            </div>
             {/* description */}
             <p className='mb-12 text-primary'>{data[0].attributes.description}</p>
             {/* price & btn */}

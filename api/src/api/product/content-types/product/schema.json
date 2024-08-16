@@ -44,6 +44,12 @@
     },
     "discounted_price": {
       "type": "decimal"
+    },
+    "subcategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subcategory.subcategory",
+      "inversedBy": "products"
     }
   }
 }
