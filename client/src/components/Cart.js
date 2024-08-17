@@ -76,7 +76,7 @@ const Cart = () => {
               onClick={handlePayment}
               className='btn btn-accent hover:bg-red-900 flex-1 px-2 gap-x-2 text-white bg-red-500'
             >
-              Checkout
+              Call us 2621023881
               <IoArrowForward className='text-lg' />
             </button>
           </div>
