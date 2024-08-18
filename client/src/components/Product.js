@@ -25,7 +25,7 @@ const Product = ({ product }) => {
         <div className='w-full h-[200px] flex items-center justify-center relative'>
           <img
             className='w-[160px] h-[160px] group-hover:scale-90 transition-all '
-            src={`http://localhost:1337${product.attributes.image.data.attributes.url}`}
+            src={`${product.attributes.image.data.attributes.url}`}
             alt='product-image'
           />
         </div>
