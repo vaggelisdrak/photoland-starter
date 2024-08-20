@@ -12,13 +12,13 @@ const CategoryNav = () => {
     <aside className='hidden lg:flex'>
       <div className='bg-white flex flex-col w-[286px] h-[500px] rounded-[8px] overflow-hidden'>
         <div className='bg-red-500 py-4 text-white uppercase font-semibold flex items-center justify-center'>
-          Browse Categories
+          Κατηγοριες προιόντων
         </div>
         <div className='flex flex-col gap-y-6 p-6 text-primary'>
           {data?.map((category) => (
             <Link
               to={`/products/${category.id}`}
-              className={`cursor-pointer uppercase px-2 rounded-lg ${
+              className={`cursor-pointer uppercase px-2 rounded-lg font-semibold font-sans ${
                 selectedCategory === category.id
                   ? 'bg-blue-800 text-white'
                   : 'hover:bg-blue-800 hover:text-white'

@@ -5,6 +5,8 @@ import MainSlider from '../components/MainSlider';
 // images
 import PromoImg1 from '../img/promo_img1.png';
 import PromoImg2 from '../img/promo_img2.png';
+import PromoImg3 from '../img/logo.png';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -26,17 +28,35 @@ const Hero = () => {
               {/* text */}
               <div className='flex flex-col max-w-[144px] h-full justify-center'>
                 <div className='text-[20px] uppercase font-medium leading-tight mb-4 text-primary'>
-                  Save 35% all dslr cameras
+                  Λιγα λογια για εμας
                 </div>
-                <a href='#' className='uppercase text-red-500'>
-                  Shop now
-                </a>
+                <Link to='/about' className='uppercase text-red-500'>
+                  Δειτε εδω
+                </Link>
+              </div>
+              {/* img */}
+              <img
+                className='absolute z-20 -top-5 -right-40'
+                src={PromoImg3}
+                alt='promo-image'
+              />
+            </div>
+            {/* promo 1 */}
+            <div className='grad flex-1 h-[250px] rounded-[8px] overflow-hidden relative p-6'>
+              {/* text */}
+              <div className='flex flex-col max-w-[144px] h-full justify-center'>
+                <div className='text-[20px] uppercase font-medium leading-tight mb-4 text-primary'>
+                  Οι υπηρεσιες μας
+                </div>
+                <Link to='/services' className='uppercase text-red-500'>
+                  Δειτε εδω
+                </Link>
               </div>
               {/* img */}
               <img
                 className='absolute z-20 -top-2 -right-4'
                 src={PromoImg1}
-                alt=''
+                alt='promo-image'
               />
             </div>
             {/* promo 2 */}
@@ -44,17 +64,17 @@ const Hero = () => {
               {/* text */}
               <div className='flex flex-col max-w-[144px] h-full justify-center'>
                 <div className='text-[20px] uppercase font-medium leading-tight mb-4 text-primary'>
-                  Save 25% mirrorless cameras
+                  Για επιδιορθωση βλαβης
                 </div>
                 <a href='#' className='uppercase text-red-500'>
-                  Shop now
+                  Δειτε εδω
                 </a>
               </div>
               {/* img */}
               <img
                 className='absolute z-20 top-4 -right-6'
                 src={PromoImg2}
-                alt=''
+                alt='promo-image'
               />
             </div>
           </div>

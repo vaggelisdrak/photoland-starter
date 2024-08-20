@@ -44,7 +44,7 @@ const SearchForm = () => {
         onChange={handleSearchInput}
         className='input border-2 border-gray-300 w-full'
         type='text'
-        placeholder='Search for a product...'
+        placeholder='Αναζητήστε κάποιο προιόν...'
       />
       <button className='btn btn-accent absolute top-0 right-0 rounded-tl-none rounded-bl-none bg-red-500'>
         <FiSearch className='text-xl text-white' />

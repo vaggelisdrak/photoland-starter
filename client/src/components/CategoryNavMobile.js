@@ -27,7 +27,7 @@ const CategoryNavMobile = ({ setCatnavMobile }) => {
               className='uppercase font-medium'
               key={category.id}
             >
-              {category.attributes.title} Cameras
+              {category.attributes.title}
             </Link>
           );
         })}

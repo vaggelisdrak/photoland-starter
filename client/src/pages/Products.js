@@ -92,8 +92,8 @@ const Products = () => {
           <CategoryNav />
           <main>
             {/* title */}
-            <div className='py-3 mb-3 text-xl uppercase text-center lg:text-left text-primary'>
-              {title} cameras
+            <div className='py-3 text-xl uppercase text-center lg:text-left text-primary'>
+              {title}
             </div>
 
             {/* Subcategories 

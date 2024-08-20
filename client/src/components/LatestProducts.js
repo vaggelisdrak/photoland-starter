@@ -10,7 +10,7 @@ const LatestProducts = () => {
   return (
     <div className='mb-16 mt-5'>
       <div className='container mx-auto'>
-        <h2 className='h2 mb-7 text-center xl:text-left text-primary'><span className='p-2 bg-red-500 rounded-lg text-white'>Latest</span> Products</h2>
+        <h2 className='h2 mb-7 text-center xl:text-left text-primary'><span className='p-2 bg-red-500 rounded-lg text-white'>Νέα</span> προιόντα</h2>
       </div>
       <ProductSlider data={data} />
     </div>

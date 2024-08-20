@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import ProductDetails from './pages/ProductDetails';
 import Search from './pages/Search';
+import Services from './pages/Services';
+import { About } from './pages/About';
 
 
 const Layout = () => {
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
         element: <Home/>
       },
       {
+        path: '/about',
+        element: <About/>
+      },
+      {
         path: '/products/:id',
         element: <Products/>
       },
@@ -39,7 +45,12 @@ const router = createBrowserRouter([
       {
         path: '/search',
         element: <Search/>
+      },
+      {
+        path: '/services',
+        element: <Services/>
       }
+
     ]
   }
 ]);

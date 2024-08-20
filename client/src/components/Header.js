@@ -4,6 +4,8 @@ import Logo from '../img/logo.png';
 // icons
 import { SlBag } from 'react-icons/sl';
 import { FiMenu } from 'react-icons/fi';
+import { FiPhone } from "react-icons/fi";
+import { RiHome2Line } from "react-icons/ri";
 // link
 import { Link } from 'react-router-dom';
 // components
@@ -44,10 +46,14 @@ const Header = () => {
             <SearchForm />
           </div>
           {/* phone & cart */}
-          <div className='flex items-center gap-x-[10px]'>
+          <div className='flex items-center gap-x-[16px]'>
+            {/* home */}
+            <div className='hidden lg:flex uppercase text-primary'>
+              <Link to='/'><RiHome2Line className='text-3xl text-primary'/></Link>
+            </div>
             {/* phone */}
             <div className='hidden lg:flex uppercase text-primary'>
-              Call us 2621023881
+              <FiPhone className='text-3xl text-primary'/>
             </div>
             {/* cart icon */}
             <div
