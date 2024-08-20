@@ -1,12 +1,4 @@
 import React from 'react';
-// import components
-import CategoryNav from '../components/CategoryNav';
-import MainSlider from '../components/MainSlider';
-// images
-import PromoImg1 from '../img/promo_img1.png';
-import PromoImg2 from '../img/promo_img2.png';
-import PromoImg3 from '../img/logo.png';
-import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   return (

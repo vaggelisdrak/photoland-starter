@@ -66,9 +66,9 @@ const Hero = () => {
                 <div className='text-[20px] uppercase font-medium leading-tight mb-4 text-primary'>
                   Για επιδιορθωση βλαβης
                 </div>
-                <a href='#' className='uppercase text-red-500'>
+                <Link to='/report' className='uppercase text-red-500'>
                   Δειτε εδω
-                </a>
+                </Link>
               </div>
               {/* img */}
               <img

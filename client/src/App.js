@@ -8,6 +8,7 @@ import ProductDetails from './pages/ProductDetails';
 import Search from './pages/Search';
 import Services from './pages/Services';
 import { About } from './pages/About';
+import Report from './pages/Report';
 
 
 const Layout = () => {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/about',
         element: <About/>
+      },
+      {
+        path: '/report',
+        element: <Report/>
       },
       {
         path: '/products/:id',
