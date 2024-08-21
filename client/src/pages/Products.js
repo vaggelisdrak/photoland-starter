@@ -114,7 +114,7 @@ const Products = () => {
               {/* Price Range Filter */}
               <div>
                 <label className='text-primary'>
-                  Min Price:
+                  Από:
                   <input
                     type='number'
                     name='min'
@@ -124,7 +124,7 @@ const Products = () => {
                   />
                 </label>
                 <label className='ml-4 text-primary'>
-                  Max Price:
+                  Έως:
                   <input
                     type='number'
                     name='max'
@@ -139,13 +139,13 @@ const Products = () => {
               {subcategories.length > 0 && (
                 <div>
                   <label className='text-primary'>
-                    Subcategory:
+                    Υποκατηγορία:
                     <select 
                       value={selectedSubcategory} 
                       onChange={handleSubcategoryChange}
                       className='border rounded ml-2 px-1 py-1 text-primary mt-5 sm:mt-0'
                     >
-                      <option value=''>All</option>
+                      <option value=''>ΌΛΑ</option>
                       {subcategories.map((subcategory) => (
                         <option key={subcategory.id} value={subcategory.id}>
                           {subcategory.attributes.title}
@@ -160,13 +160,13 @@ const Products = () => {
               {/* Sorting Options */}
               <div>
                 <label className='text-primary'>
-                  Sort By:
+                  Ταξινόμηση:
                   <select value={sortOption} onChange={handleSortChange} className='border rounded ml-2 px-1 py-1 text-primary mt-5 sm:mt-0'>
-                    <option value=''>None</option>
-                    <option value='price:asc'>Price: Low to High</option>
-                    <option value='price:desc'>Price: High to Low</option>
-                    <option value='title:asc'>Alphabetical: A-Z</option>
-                    <option value='title:desc'>Alphabetical: Z-A</option>
+                    <option value=''>Προεπιλογή</option>
+                    <option value='price:asc'>Τιμή: Low to High</option>
+                    <option value='price:desc'>Τιμή: High to Low</option>
+                    <option value='title:asc'>Αλφαβητικά: A-Ω</option>
+                    <option value='title:desc'>Αλφαβητικά: Ω-A</option>
                   </select>
                 </label>
               </div>
