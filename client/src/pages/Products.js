@@ -41,6 +41,7 @@ const Products = () => {
     setSelectedSubcategory(searchParams.get('subcategory') || '');
   }, [searchParams]);
 
+
   useEffect(() => {
     if (productsData && productsData.length > 0) {
       setTitle(productsData[0].attributes.categories.data[0].attributes.title);

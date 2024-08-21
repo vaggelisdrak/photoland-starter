@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 
 const CategoryNav = () => {
@@ -8,7 +8,6 @@ const CategoryNav = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
   const [subCategoriesData, setSubcategoriesData] = useState([]);
-  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Fetch subcategory details
