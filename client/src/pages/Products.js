@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // useParams hook
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 // useFetch hook
 import useFetch from '../hooks/useFetch';
 // components
@@ -11,11 +11,14 @@ import { Oval } from 'react-loader-spinner';
 
 const Products = () => {
   const { id } = useParams();
+  //get subcategory from url search params
+  const [searchParams, setSearchParams] = useSearchParams();
+  console.log('searchParams',searchParams.get('subcategory'))
     
   // State for filters
   const [priceRange, setPriceRange] = useState([0, 5000]);
   const [sortOption, setSortOption] = useState('');
-  const [selectedSubcategory, setSelectedSubcategory] = useState('');
+  const [selectedSubcategory, setSelectedSubcategory] = useState(searchParams.get('subcategory'));
 
   console.log('selected sub',selectedSubcategory)
   
@@ -31,26 +34,28 @@ const Products = () => {
   const [title, setTitle] = useState(null);
   const [subcategories, setSubcategories] = useState([]);
   
-  // Fetch category details
-  const { data: categoryData } = useFetch(`/categories/${id}?populate=subcategories`);
+  // Fetch sub sub category details
+  //const { data: categoryData } = useFetch(`/subcategories/${selectedSubcategory}?populate=subsubcategories`);
+  const { subsubcategoriesData } = useFetch(`/subsubcategories`);
+  console.log('categoryDataaa',subsubcategoriesData)
 
   // Reset selectedSubcategory when id changes
   useEffect(() => {
     setSelectedSubcategory('');
   }, [id]);
   
-  // Set the title and subcategories when data is fetched
+  // Set the title and subcategories when main product data is fetched
   useEffect(() => {
     if (data && data.length > 0) {
       setTitle(data[0].attributes.categories.data[0].attributes.title);
     }
   }, [data]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (categoryData && categoryData.attributes.subcategories.data) {
       setSubcategories(categoryData.attributes.subcategories.data);
     }
-  }, [categoryData]);
+  }, [categoryData]);*/
 
   // Handle price range change
   const handlePriceRangeChange = (event) => {
@@ -134,7 +139,7 @@ const Products = () => {
                   />
                 </label>
               </div>
-              {/* Subcategory Filter */}
+              {/* Subcategory Filter 
               <div>
               {subcategories.length > 0 && (
                 <div>
@@ -145,7 +150,7 @@ const Products = () => {
                       onChange={handleSubcategoryChange}
                       className='border rounded ml-2 px-1 py-1 text-primary mt-5 sm:mt-0'
                     >
-                      <option value=''>ΌΛΑ</option>
+                      <option value=''>OΛΑ</option>
                       {subcategories.map((subcategory) => (
                         <option key={subcategory.id} value={subcategory.id}>
                           {subcategory.attributes.title}
@@ -155,7 +160,7 @@ const Products = () => {
                   </label>
                 </div>
               )}
-              </div>
+              </div>*/}
 
               {/* Sorting Options */}
               <div>

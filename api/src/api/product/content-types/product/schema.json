@@ -50,6 +50,12 @@
       "relation": "manyToMany",
       "target": "api::subcategory.subcategory",
       "inversedBy": "products"
+    },
+    "subsubcategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subsubcategory.subsubcategory",
+      "mappedBy": "products"
     }
   }
 }

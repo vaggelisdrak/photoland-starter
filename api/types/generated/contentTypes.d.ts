@@ -857,6 +857,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::subcategory.subcategory'
     >;
+    subsubcategories: Attribute.Relation<
+      'api::product.product',
+      'manyToMany',
+      'api::subsubcategory.subsubcategory'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -898,6 +903,11 @@ export interface ApiSubcategorySubcategory extends Schema.CollectionType {
       'manyToOne',
       'api::category.category'
     >;
+    subsubcategories: Attribute.Relation<
+      'api::subcategory.subcategory',
+      'oneToMany',
+      'api::subsubcategory.subsubcategory'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -909,6 +919,47 @@ export interface ApiSubcategorySubcategory extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::subcategory.subcategory',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSubsubcategorySubsubcategory extends Schema.CollectionType {
+  collectionName: 'subsubcategories';
+  info: {
+    singularName: 'subsubcategory';
+    pluralName: 'subsubcategories';
+    displayName: 'subsubcategory';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    products: Attribute.Relation<
+      'api::subsubcategory.subsubcategory',
+      'manyToMany',
+      'api::product.product'
+    >;
+    subcategory: Attribute.Relation<
+      'api::subsubcategory.subsubcategory',
+      'manyToOne',
+      'api::subcategory.subcategory'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::subsubcategory.subsubcategory',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::subsubcategory.subsubcategory',
       'oneToOne',
       'admin::user'
     > &
@@ -937,6 +988,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::product.product': ApiProductProduct;
       'api::subcategory.subcategory': ApiSubcategorySubcategory;
+      'api::subsubcategory.subsubcategory': ApiSubsubcategorySubsubcategory;
     }
   }
 }

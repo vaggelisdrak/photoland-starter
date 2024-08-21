@@ -28,7 +28,7 @@ const Hero = () => {
               {/* text */}
               <div className='flex flex-col max-w-[144px] h-full justify-center'>
                 <div className='text-[20px] uppercase font-medium leading-tight mb-4 text-primary'>
-                  Λιγα λογια για εμας
+                  Λιγα λογια <br/>για εμας
                 </div>
                 <Link to='/about' className='uppercase text-red-500'>
                   Δειτε εδω
@@ -64,7 +64,7 @@ const Hero = () => {
               {/* text */}
               <div className='flex flex-col max-w-[144px] h-full justify-center'>
                 <div className='text-[20px] uppercase font-medium leading-tight mb-4 text-primary'>
-                  Για επιδιορθωση βλαβης
+                  Δηλωσε τη βλαβη σου
                 </div>
                 <Link to='/report' className='uppercase text-red-500'>
                   Δειτε εδω
