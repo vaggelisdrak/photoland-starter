@@ -29,6 +29,10 @@ const CategoryNavMobile = ({ setCatnavMobile }) => {
   }, [subCategoryData]);
 
   useEffect(() => {
+    setSelectedSubcategory(searchParams.get('subcategory') || '');
+  }, [id]);
+
+  useEffect(() => {
     // Automatically select the category if the URL contains a category id
     if (categories && id) {
       const foundCategory = categories.find(category => category.id.toString() === id);

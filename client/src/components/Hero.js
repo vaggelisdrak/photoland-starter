@@ -54,7 +54,7 @@ const Hero = () => {
               </div>
               {/* img */}
               <img
-                className='absolute z-20 -top-2 -right-4'
+                className='absolute z-20 -top-0 -right-20 h-full w-full'
                 src={PromoImg1}
                 alt='promo-image'
               />

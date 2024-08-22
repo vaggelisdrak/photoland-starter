@@ -122,7 +122,7 @@ const Products = () => {
               {/* Subsubcategories Dropdown */}
               <div>
               {subsubcategories?.length > 0 && (
-                <div className='py-1'>
+                <div className='py-1 sm:mt-0 mt-5'>
                   <label className='text-primary'>
                     Υποκατηγορία:
                     <select 
