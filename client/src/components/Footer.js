@@ -25,7 +25,7 @@ const Footer = () => {
   return (
     <footer className='pt-16 bg-white'>
       <div className='container mx-auto'>
-        <h2 className='h2 uppercase mb-8 font-semibold text-primary text-center'>
+        <h2 className='h2 uppercase mb-8 font-semibold text-primary text-center text-[22px]'>
             Οι Συνεργατες μας
           </h2>
         <div className='flex flex-wrap gap-y-6 gap-x-4 lg:gap-x-10 items-center justify-center lg:justify-between mb-14'>
