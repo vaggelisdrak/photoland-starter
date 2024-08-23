@@ -8,6 +8,7 @@ import RelatedProducts from '../components/RelatedProducts';
 // context
 import { CartContext } from '../context/CartContext';
 import { Oval } from 'react-loader-spinner';
+import ImageSlider from '../components/ImageSlider';
 
 const ProductDetails = () => {
   const { addToCart } = useContext(CartContext);
@@ -40,11 +41,12 @@ const ProductDetails = () => {
         {/* text */}
         <div className='flex flex-col lg:flex-row gap-[30px] mb-[30px]'>
           <div className='flex-1 lg:max-w-[40%] lg:h-[540px] grad rounded-lg flex justify-center items-center'>
-            <img
+            {/*<img
               src={`${data[0].attributes.image.data[0].attributes.url}`}
               alt=''
               className='w-full max-w-[65%]'
-            />
+            />*/}
+            <ImageSlider images={data[0].attributes.image.data} />
           </div>
           <div className='flex-1 bg-white p-12 xl:p-20 rounded-lg flex flex-col justify-center'>
             {/* category title */}
