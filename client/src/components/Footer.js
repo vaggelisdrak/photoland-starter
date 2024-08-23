@@ -71,22 +71,22 @@ const Footer = () => {
           <div className='mt-auto text-primary'>
             <div className='flex space-x-5 mt-5'>
               <MdOutlineMailOutline size={25} className='mr-2'/>
-              info@o-m.gr
+              info@thermoclimatistiki.gr
             </div>
 
             <div className='flex space-x-5 mt-5'>
               <RiHome2Line size={25} className='mr-2'/>
-              25ης Μαρτίου 18, Πετρούπολη, Τ.Κ. 13231
+              Αλφείου 50 Πύργος, Ηλείας
             </div>
 
             <div className='flex space-x-5 mt-5'>
               <FiPhone size={25} className='mr-2'/>
-              +30 210 5020809
+              +30 2621023881
             </div>
 
             <div className='flex space-x-5 mt-5'>
               <IoMdTime size={26} className='mr-2'/>
-              Δε - Παρ 08:00 - 16:00 | Σάβ Κλειστά
+              Δε - Σαβ 8:30-3:00
             </div>
           </div>
         </div>

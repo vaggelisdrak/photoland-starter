@@ -32,6 +32,8 @@ const ProductDetails = () => {
   // category title
   const categoryTitle = data[0].attributes.categories.data[0].attributes.title;
 
+  console.log(data[0].attributes.description);
+
   return (
     <div className='mb-16 pt-44 lg:pt-[30px] xl:pt-0'>
       <div className='container mx-auto'>
@@ -58,7 +60,19 @@ const ProductDetails = () => {
               </div>
             )}
             {/* description */}
-            <p className='mb-12 text-primary'>{data[0].attributes.description}</p>
+            <p className='mb-12 text-primary'>
+            <ul>
+              {data[0].attributes.description.split('•').map((item, index) => (
+                item.trim() && (
+                  <li key={index} className={index === 0 ? 'mb-5 list-none' : 'list-disc ml-5'}>
+                    {item.trim()}
+                  </li>
+                )
+              ))}
+            </ul>
+          </p>
+
+
             {/* price & btn */}
             <div className='flex items-center gap-x-8'>
               {/* price */}
@@ -80,7 +94,7 @@ const ProductDetails = () => {
                 onClick={() => addToCart(data, id)}
                 className='btn btn-accent text-white'
               >
-                Add to cart
+                Προσθεστε
               </button>
             </div>
           </div>

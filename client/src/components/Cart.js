@@ -52,12 +52,12 @@ const Cart = () => {
         <div className='px-6 py-10 flex flex-col'>
           {/* subtotal */}
           <div className='flex justify-between text-lg'>
-            <div>Subtotal</div>
+            <div>Υποσύνολο</div>
             <div>{total} €</div>
           </div>
           {/* total */}
           <div className='flex justify-between text-2xl'>
-            <div>Total</div>
+            <div>Σύνολο</div>
             <div>{total} €</div>
           </div>
         </div>
@@ -70,19 +70,18 @@ const Cart = () => {
               onClick={clearCart}
               className='btn btn-accent hover:bg-red-900 text-white bg-blue-800'
             >
-              clear cart
+              Καθαρισμος
             </button>
             <button
-              onClick={handlePayment}
               className='btn btn-accent hover:bg-red-900 flex-1 px-2 gap-x-2 text-white bg-red-500'
             >
-              Call us 2621023881
+              Τηλ. 2621023881
               <IoArrowForward className='text-lg' />
             </button>
           </div>
         ) : (
           <div className='h-full absolute top-0 right-0 left-0 flex justify-center items-center -z-10 flex-col text-white/30'>
-            <div className='text-2xl text-primary'>Your cart is empty</div>
+            <div className='text-2xl text-primary'>Το καλάθι σας είναι άδειο</div>
             <div className='text-6xl'>
               <IoCartOutline className='text-primary'/>
             </div>

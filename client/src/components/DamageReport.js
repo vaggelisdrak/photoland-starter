@@ -1,6 +1,19 @@
 import React from 'react'
+import emailjs from 'emailjs-com';
 
 const DamageReport = () => {
+    const sendEmail = (e) => {
+        e.preventDefault();
+        //service@thermoclimatistiki.gr
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+
+        e.target.reset();  // Reset form after submission
+  } ;
   return (
     <div>
         <section className='mb-[30px] pt-36 lg:pt-0'>
@@ -11,7 +24,7 @@ const DamageReport = () => {
                     Τα πεδία που είναι επισημασμένα με <strong className='text-red-600'>*</strong> είναι υποχρεωτικά
                 </p>
 
-                <form>
+                <form onSubmit={sendEmail}>
                     <div class="mt-3">
                         <div class="mt-4">
                             <label htmlFor="name" className="block  font-medium text-gray-700">Όνομα <strong className='text-red-600'>*</strong></label>
