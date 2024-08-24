@@ -19,13 +19,16 @@ const Products = () => {
   console.log('id', id);
 
   // Fetch products based on category id, filters, sorting, and subcategory
-  const { data: productsData } = useFetch(
+  const { data: productsData, loading, error } = useFetch(
     `/products?populate=*&filters[categories][id][$eq]=${id}` +
     `&filters[price][$gte]=${priceRange[0]}&filters[price][$lte]=${priceRange[1]}` +
     `${selectedSubcategory ? `&filters[subcategories][id][$eq]=${selectedSubcategory}` : ''}` +
     `${selectedSubsubcategory ? `&filters[subsubcategories][id][$eq]=${selectedSubsubcategory}` : ''}` +
-    `${sortOption ? `&sort=${sortOption}` : ''}`
+    `${sortOption ? `&sort=${sortOption}` : ''}`+
+    `&pagination[limit]=100`
   );
+
+  console.log('products data length', productsData?.length);
 
   // Fetch subsubcategories based on selected subcategory
   const { data: subSubCategoryData } = useFetch(`/subcategories/${selectedSubcategory}?populate=subsubcategories`);
@@ -68,16 +71,25 @@ const Products = () => {
 
   if (!productsData) {
     return (
-      <div className='container mx-auto flex space-x-3 text-primary'>
-        <h2 className="text-[30px]">loading...</h2>
-        <Oval
-          visible={true}
-          height="40"
-          width="40"
-          color="#000000"
-          ariaLabel="oval-loading"
-        />
+    <div className='mb-16 pt-40 lg:pt-0'>
+      <div className='container mx-auto'>
+        <div className='flex gap-x-[30px]'>
+          <CategoryNav />
+          <main>
+            <div className='container mx-auto flex space-x-3 text-primary'>
+              <h2 className="text-[30px]">Loading...</h2>
+              <Oval
+                visible={true}
+                height="40"
+                width="40"
+                color="#000000"
+                ariaLabel="oval-loading"
+              />
+            </div>
+          </main>
+        </div>
       </div>
+    </div>
     );
   }
 
@@ -157,13 +169,13 @@ const Products = () => {
             </div>
             <hr/>
             {/* Product Grid or No Products Message */}
-            {productsData && productsData.length > 0 ? (
+            {!loading ? (
               <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-[15px] md:gap-[30px]'>
                 {productsData.map((product) => (
                   <Product product={product} key={product.id} />
                 ))}
               </div>
-            ) : (
+            ) : ( 
               <div className='text-center py-6 text-lg font-semibold text-gray-600 max-w-full'>
                 <img src={NoProducts} alt='no-products-found' className='w-full mx-auto' />
               </div>

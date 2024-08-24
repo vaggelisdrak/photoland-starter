@@ -17,7 +17,7 @@ const Search = () => {
     `/products?populate=*&filters[title][$contains]=${searchTerm}`
   );*/
 
-  const { data } = useFetch(`/products?populate=*&filters[$or][0][title][$contains]=${searchTerm}&filters[$or][1][description][$contains]=${searchTerm}`);
+  const { data } = useFetch(`/products?populate=*&filters[$or][0][title][$containsi]=${searchTerm}&filters[$or][1][description][$containsi]=${searchTerm}`);
   console.log(data);
   
   return (

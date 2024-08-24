@@ -37,7 +37,7 @@ const Product = ({ product }) => {
           </div>
           {/* title */}
           <div className='text-[15px] mb-4 lg:mb-9 text-primary'>
-            {product.attributes.title.substring(0, 35)}...
+            {product.attributes.title.substring(0, 50)}...
           </div>
           {/* price */}
           {!product.attributes.discounted_price ? (
