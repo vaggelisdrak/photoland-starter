@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
   // console.log(product);
+  console.log('product is',product);
   return (
     <Link to={`/product/${product.id}`}>
       <div className='grad w-full h-[362px] rounded-[8px] overflow-hidden relative group'>
@@ -23,12 +24,17 @@ const Product = ({ product }) => {
 
         {/* image */}
         <div className='w-full h-[200px] flex items-center justify-center relative'>
-          <img
-            className='w-[160px] h-[160px] group-hover:scale-90 transition-all '
-            src={`${product.attributes.image.data[0].attributes.url}`}
-            alt='product-image'
-          />
+          {product?.attributes?.image?.data?.[0]?.attributes?.url ? (
+            <img
+              className='w-[160px] h-[160px] group-hover:scale-90 transition-all'
+              src={product.attributes.image.data[0].attributes.url}
+              alt='product-image'
+            />
+          ) : (
+            <p>No image available</p>
+          )}
         </div>
+
         {/* text */}
         <div className='px-6 pb-8 flex flex-col'>
           {/* category title */}
@@ -42,7 +48,7 @@ const Product = ({ product }) => {
           {/* price */}
           {!product.attributes.discounted_price ? (
             <div className='text-lg font-bold text-red-500'>
-              {product.attributes.price}€
+              {product.attributes.price === 0 ? '' : `${product.attributes.price}€`}
             </div>
             ):(
               <div >

@@ -80,7 +80,7 @@ const ProductDetails = () => {
               {/* price */}
               {!data[0].attributes.discounted_price ? (
                 <div className='text-xl font-bold text-red-500'>
-                  {data[0].attributes.price}€
+                  {data[0].attributes.price === 0 ? '' : `${data[0].attributes.price}€`}
                 </div>
                 ):(
                   <div >
